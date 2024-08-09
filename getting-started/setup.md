@@ -5,12 +5,12 @@
 
 ## Library
 
-Checkout the libraries from <svn://10.17.100.38/libs>  
+Checkout the libraries from <https://gitlab.sains.com.my/sds/javafw/training-libs.git>  
 The libraries used by the framework should be placed in `C:/Projects/libs`.  
 
 ## New Project 
 
-Checkout the framework from <svn://10.17.100.38/java_training> into your Project folder. e.g. `C:/Projects/sdsfw`.
+Checkout the framework from <https://gitlab.sains.com.my/sds/javafw/aquilaframework-falcon-v2.git> into your Project folder. e.g. `C:/Projects/sdsfw`.
 
 **Directory Structure**
 - `src/`

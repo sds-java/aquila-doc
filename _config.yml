@@ -1,0 +1,4 @@
+# _config.yml
+title: My Jekyll Site
+description: A description of my Jekyll site
+theme: jekyll-theme-primer

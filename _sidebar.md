@@ -1,7 +1,7 @@
 - Getting Started
 	- [Setup](getting-started/setup.md)
 	- [Configurations](getting-started/configurations.md)
-	- [Redis]
+	- Redis
 		-[Setup](getting-started/redis.md)
 		-[Verify](getting-started/redis-verify.md)
 	

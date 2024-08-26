@@ -13,6 +13,7 @@
 	- [Model](guides/model.md)
 	- [Model Events](guides/model_events.md)
 	- [Localization](guides/localization.md)
+	- [API](guides/apiUtils.md)
 
 - Configurations
 	- [Access Control](config/access-control.md)

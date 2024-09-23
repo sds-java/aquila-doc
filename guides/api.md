@@ -3,6 +3,7 @@
 APIUtil allow to call OpenAPI format API calls. 
 
 ## API Calls from back-end
+## API Calls from back-end
 
 This documentation will briefly explain the most frequent use methods to call API from non smarkXChange and smartXChange API methods.
 

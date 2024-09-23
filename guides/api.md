@@ -288,7 +288,9 @@ public class ApiListenerAction extends BaseActionSupport_API{
 
 ## API Authentication
 Application Name: API Authentication  
+
 Module: System Administration  
+
 Table: t_api_authentication  
 
 Steps to generate secret key and customer key  
@@ -297,9 +299,15 @@ Step 2: Input the required fields. Refer to API Authentication Screen details be
 Step 3: Save and will receive the Customer Key and Secret Key required for generate access token  
 
 API Authentication Screen details.  
+
 API Application - Application Code.  
+
 API Description - Description of what is your API do.  
+
 User - User ID of your system. Must be exists in system.  
+
 Token Duration - Duration of the generate token count in seconds.  
+
 Customer Key - Will be auto-generated.  
+
 Secret Key - Will be auto-generated.  

@@ -152,36 +152,7 @@ public void getUserInfo() throws Exception{
     }
 }
 
-public String getUserId(){
-    return userId;
-}
+// getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
 
-public void setUserId(String userId){
-    this.userId = userId;
-}
-
-public File getAttachmentFile() {
-    return attachmentFile;
-}
-
-public void setAttachmentFile(File attachmentFile) {
-    this.attachmentFile = attachmentFile;
-}
-
-public String getAttachmentFileContentType() {
-    return attachmentFileContentType;
-}
-
-public void setAttachmentFileContentType(String attachmentFileContentType) {
-    this.attachmentFileContentType = attachmentFileContentType;
-}
-
-public String getAttachmentFileFileName() {
-    return attachmentFileFileName;
-}
-
-public void setAttachmentFileFileName(String attachmentFileFileName) {
-    this.attachmentFileFileName = attachmentFileFileName;
-}
 ```
 

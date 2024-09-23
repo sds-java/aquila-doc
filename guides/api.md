@@ -3,7 +3,6 @@
 APIUtil allow to call OpenAPI format API calls. 
 
 ## API Calls from back-end
-## API Calls from back-end
 
 This documentation will briefly explain the most frequent use methods to call API from non smarkXChange and smartXChange API methods.
 
@@ -44,6 +43,34 @@ public String getUserId(){
 
 public void setUserId(String userId){
     this.userId = userId;
+}
+```
+
+API Calls from back-end using JSON String
+```java
+public void getUserInfo() throws Exception{
+    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+	try{
+        String jsonData = request.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
+        JSONParser parser = new JSONParser();
+        JSONObject jsonRequest = (JSONObject) parser.parse(jsonData);
+        String userId = "";
+        if(jsonRequest.get("userId") != null){
+            userId = jsonRequest.get("userId").toString();
+        } else {
+            throw new Exception("userId cannot be Empty");
+        }
+
+        ApiUtil apiUtil = new ApiUtil();
+        HashMap<String,String> header = new HashMap<String,String>();
+        HashMap<String,String> body = new HashMap<String,String>();
+        header.put("accept","application/json");
+        header.put("content-type","application/x-www-form-urlencoded");
+        body.put("userId", userId);
+        String results = apiCall( "post", "https://zeus.sarawak.gov.my/aquilaframework-falcon-v2/ApiListener_userInfo", header, body );
+    } catch (Exception ex){
+        ex.printStackTrace();
+    }
 }
 ```
 
@@ -158,34 +185,3 @@ public void setAttachmentFileFileName(String attachmentFileFileName) {
 }
 ```
 
-## API Calls from back-end using JSON String
-
-```java
-public void getUserInfo() throws Exception{
-    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
-	try{
-        String jsonData = request.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
-        JSONParser parser = new JSONParser();
-        JSONObject jsonRequest = (JSONObject) parser.parse(jsonData);
-
-        ApiUtil apiUtil = new ApiUtil();
-        HashMap<String,String> header = new HashMap<String,String>();
-        JSONObject json = new JSONObject();
-        String userId = "";
-        if(jsonRequest.get("userId")!=null){
-           userId =  jsonRequest.get("userId").toString();
-        } else {
-            throw new Exception("userId cannot be empty!.");
-        }
-        json.put("userId", userId);
-        json.put("grant_type","credentials");
-        json.put("status","Y");
-        header.put("accept","application/json");
-        header.put("content-type","application/x-www-form-urlencoded");
-
-        String results = apiCall( "post", "https://zeus.sarawak.gov.my/aquilaframework-falcon-v2/ApiListener_userInfo", header, json.toJSONString() );
-    } catch (Exception ex){
-        ex.printStackTrace();
-    }
-}
-```

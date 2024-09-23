@@ -55,6 +55,7 @@ public void setUserId(String userId){
     **body:** Basically even if the parameter is in String, it will be converted to HttpEntity in the end. It just that keep it in string for JSON String parser. 
 
 ```java
+//This sample is POST by x-www-form-urlencoded form. 
 private String userId = "";
 public void getUserInfo(){
     try{
@@ -92,6 +93,7 @@ public void setUserId(String userId){
     **binaryBody:** This is HashMap<String,Object>. String will be the object name, while Object is BinaryPart class you can found it in ApiUtil as well. 
     
 ```java
+//This sample is POST by x-www-form-urlencoded form. 
 private String userId = "";
 private File attachmentFile = null;
 private String attachmentFileContentType;
@@ -155,4 +157,36 @@ public void setAttachmentFileFileName(String attachmentFileFileName) {
     this.attachmentFileFileName = attachmentFileFileName;
 }
 
+```
+
+## API Calls from back-end using JSON String
+
+```java
+public void getUserInfo() throws Exception{
+    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+	try{
+        String jsonData = request.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
+        JSONParser parser = new JSONParser();
+        JSONObject jsonRequest = (JSONObject) parser.parse(jsonData);
+
+        ApiUtil apiUtil = new ApiUtil();
+        HashMap<String,String> header = new HashMap<String,String>();
+        JSONObject json = new JSONObject();
+        String userId = "";
+        if(jsonRequest.get("userId")!=null){
+           userId =  jsonRequest.get("userId").toString();
+        } else {
+            throw new Exception("userId cannot be empty!.");
+        }
+        json.put("userId", userId);
+        json.put("grant_type","credentials");
+        json.put("status","Y");
+        header.put("accept","application/json");
+        header.put("content-type","application/x-www-form-urlencoded");
+
+        String results = apiCall( "post", "https://zeus.sarawak.gov.my/aquilaframework-falcon-v2/ApiListener_userInfo", header, json.toJSONString() );
+    } catch (Exception ex){
+        ex.printStackTrace();
+    }
+}
 ```

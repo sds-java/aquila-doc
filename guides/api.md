@@ -120,37 +120,7 @@ public void setUserId(String userId){
     **binaryBody:** This is HashMap<String,Object>. String will be the object name, while Object is BinaryPart class you can found it in ApiUtil as well. 
     
 ```java
-//This sample is POST by x-www-form-urlencoded form. 
-private String userId = "";
-private File attachmentFile = null;
-private String attachmentFileContentType;
-private String attachmentFileFileName;
-public void getUserInfo() throws Exception{
-    try{
-        ApiUtil apiUtil = new ApiUtil();
-        HashMap<String,String> header = new HashMap<String,String>();
-        HashMap<String,String> body = new HashMap<String,String>();
-		HashMap<String,Object> binaryBody = new HashMap<String,Object>();
-		if(attachmentFileFileName==null){
-			new Exception("[attachmentFileFileName] cannot be empty");
-		}
-		if(attachmentFile==null){
-			new Exception("[attachmentFile] cannot be empty");
-		}
-		if(attachmentFileContentType==null){
-			new Exception("[attachmentFileContentType] cannot be empty");
-		}
-		ApiUtil.BinaryPart binaryPart;
-		binaryPart = apiUtil.new BinaryPart(attachmentFileFileName,attachmentFile,attachmentFileContentType);
-		binaryBody.put("file", binaryPart);
-        header.put("accept","application/json");
-        header.put("content-type","application/x-www-form-urlencoded");
-        body.put("userId", userId);
-        String results = apiCall( "post", "https://zeus.sarawak.gov.my/aquilaframework-falcon-v2/ApiListener_userInfo", header, body, binaryBody );
-    } catch (Exception ex){
-        ex.printStackTrace();
-    }
-} // getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
+ // getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
 
 ```
 

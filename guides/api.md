@@ -21,9 +21,9 @@ This documentation will briefly explain the most frequent use methods to call AP
     **body:** Basically even if the parameter is in HashMap<String,String>, it will be converted to HttpEntity in the end. It just that HashMap<String,String> will be easier to use for parameters.
 
 ```java
+//This sample is POST by x-www-form-urlencoded form. 
 private String userId = "";
 public void getUserInfo(){
-    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
     try{
         ApiUtil apiUtil = new ApiUtil();
         HashMap<String,String> header = new HashMap<String,String>();
@@ -56,7 +56,6 @@ public void setUserId(String userId){
 ```java
 private String userId = "";
 public void getUserInfo(){
-    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
     try{
         ApiUtil apiUtil = new ApiUtil();
         HashMap<String,String> header = new HashMap<String,String>();
@@ -97,7 +96,6 @@ private File attachmentFile = null;
 private String attachmentFileContentType;
 private String attachmentFileFileName;
 public void getUserInfo() throws Exception{
-    HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
     try{
         ApiUtil apiUtil = new ApiUtil();
         HashMap<String,String> header = new HashMap<String,String>();

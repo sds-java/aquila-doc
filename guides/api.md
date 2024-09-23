@@ -127,12 +127,14 @@ public void setUserId(String userId){
     **Description:** API call methods using HashMap, but with attachment file to be pass. Normally it use to send attachment to save by API calls. The return value of this method is string value.
 
     **method:** get,post,put,patch,delete in lower-case
-    
+
     **url:** API URL to call
 
     **header:** contents of header for the API site you are calling. Sometime you may need to specify content-type of application/json, application/xml, appId, authorization, and even authorization-app
 
     **body:** Basically even if the parameter is in String, it will be converted to HttpEntity in the end. It just that keep it in string for JSON String parser. 
+
+    **binaryBody:** This is HashMap<String,Object>. String will be the object name, while Object is BinaryPart class you can found it in ApiUtil as well. 
 
 ```java
 //This sample is POST by x-www-form-urlencoded form. 
@@ -166,6 +168,38 @@ public void getUserInfo() throws Exception{
         ex.printStackTrace();
     }
 } // getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
+
+public String getUserId(){
+    return userId;
+}
+
+public void setUserId(String userId){
+    this.userId = userId;
+}
+
+public String getAttachmentFileContentType(){
+    return attachmentFileContentType;
+}
+
+public void setAttachmentFileContentType(String attachmentFileContentType){
+    this.attachmentFileContentType = attachmentFileContentType;
+}
+
+public File getAttachmentFile(){
+    return attachmentFile;
+}
+
+public void setAttachmentFile(File attachmentFile){
+    this.attachmentFile = attachmentFile;
+}
+
+public String getAttachmentFileFileName(){
+    return attachmentFileFileName;
+}
+
+public void setAttachmentFileFileName(String attachmentFileFileName){
+    this.attachmentFileFileName = attachmentFileFileName;
+}
 
 ```
 

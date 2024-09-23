@@ -157,8 +157,87 @@ public void getUserInfo() throws Exception{
 ```
 
 ## Setup API Listener
-API Listener will require access token in header for validation.
+API Listener will require access token in header for validation. Will have to extends from BaseActionSupport_API. Before proceed with the coding for API Listener, please setup the API Authentication. Please refer to API Authentication segment for more information about how to setup the API Authentication to generate access token.
 
+```java
+
+public class ApiListenerAction extends BaseActionSupport_API{
+
+	@Override
+	public String apiApp() {
+		return "API_CALL";
+	}
+
+	@Override
+	public Boolean validateRights() {
+		return Boolean.TRUE;
+	}
+	
+	public ApiListenerAction(){
+		model = new String();
+        setInsertUpdateSuccessCode(SystemConstants.ACTION_Status.LOAD_EDIT_PAGE);
+	}
+	
+	public void userInfo(){
+		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+		HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().get(ServletActionContext.HTTP_RESPONSE);
+		BaseDAOImpl dao = new BaseDAOImpl();
+		JSONObject jsonResult = new JSONObject();
+		String status = "";
+		try{
+			String userId = request.getParameter("userId");
+			if(userId!=null){
+				User user = (User) dao.getSession()
+					.getNamedQuery("User.findByUsUserId")
+					.setParameter("us_user_id", userId)
+					.uniqueResult();
+				if(user!=null){
+					status = "success";
+					jsonResult.put("id", user.getUs_id());
+					jsonResult.put("userId", user.getUs_user_id());
+					jsonResult.put("name", user.getUs_user_name());
+					jsonResult.put("email", user.getUs_email());
+					jsonResult.put("status", user.getUs_status());
+				} else {
+					status = "failed";
+					jsonResult.put("message", "userId '" 
+						+ userId + "' not found!.");
+				}
+			} else {
+				status = "failed";
+				jsonResult.put("message", "Invalid parameter userId '" 
+						+ userId + "'");
+			}
+			JSONObject data = new JSONObject();
+			data.put("status", status);
+			data.put("data", jsonResult);
+			response.setContentType("application/json");
+            response.getWriter().append(data.toJSONString());
+            response.flushBuffer();
+		} catch(Exception ex){
+			status = "failed";
+			jsonResult.put("message", "Request failed.");
+			try{
+				JSONObject data = new JSONObject();
+				data.put("data", jsonResult);
+				data.put("status", status);
+				response.setContentType("application/json");
+				response.getWriter().append(data.toJSONString());
+				response.flushBuffer();
+			} catch(Exception ex2) {
+				
+			}
+		} finally {
+			dao.closeSession();
+			dao = null;
+		}
+	}
+}
+
+```
+
+
+## API Authentication
 Application Name: API Authentication
 Module: System Administration
 Table: t_api_authentication

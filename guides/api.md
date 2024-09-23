@@ -167,7 +167,7 @@ public void getUserInfo() throws Exception{
     } catch (Exception ex){
         ex.printStackTrace();
     }
-} // getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
+} 
 
 public String getUserId(){
     return userId;
@@ -205,6 +205,8 @@ public void setAttachmentFileFileName(String attachmentFileFileName){
 
 ## Setup API Listener
 API Listener will require access token in header for validation. Will have to extends from BaseActionSupport_API. Before proceed with the coding for API Listener, please setup the API Authentication. Please refer to API Authentication segment for more information about how to setup the API Authentication to generate access token.
+
+When access token is provided, and the User Group Setup is setup properly.
 
 ```java
 
@@ -285,19 +287,19 @@ public class ApiListenerAction extends BaseActionSupport_API{
 
 
 ## API Authentication
-Application Name: API Authentication
-Module: System Administration
-Table: t_api_authentication
+Application Name: API Authentication  
+Module: System Administration  
+Table: t_api_authentication  
 
-Steps to generate secret key and customer key
-Step 1: Create new API Authentication
-Step 2: Input the required fields. Refer to API Authentication Screen details below.
-Step 3: Save and will receive the Customer Key and Secret Key required for generate access token
+Steps to generate secret key and customer key  
+Step 1: Create new API Authentication  
+Step 2: Input the required fields. Refer to API Authentication Screen details below.  
+Step 3: Save and will receive the Customer Key and Secret Key required for generate access token  
 
-API Authentication Screen details.
-API Application - Application Code.
-API Description - Description of what is your API do.
-User - User ID of your system. Must be exists in system. 
-Token Duration - Duration of the generate token count in seconds.
-Customer Key - Will be auto-generated.
-Secret Key - Will be auto-generated.
+API Authentication Screen details.  
+API Application - Application Code.  
+API Description - Description of what is your API do.  
+User - User ID of your system. Must be exists in system.  
+Token Duration - Duration of the generate token count in seconds.  
+Customer Key - Will be auto-generated.  
+Secret Key - Will be auto-generated.  

@@ -150,9 +150,7 @@ public void getUserInfo() throws Exception{
     } catch (Exception ex){
         ex.printStackTrace();
     }
-}
-
-// getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
+} // getter and setter methods for attachmentFileContentType,attachmentFile,attachmentFileFileName, and userId
 
 ```
 

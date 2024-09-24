@@ -56,3 +56,39 @@ Create a user group by adding users and assigning applications to that group.
 
 Sample:	
 <img class="img-bordered" src="/sdsfw_docs/images/access-control/sample-user-group.png" alt="sample user group" />
+
+## Application Setup  
+Usual application setup, but with methods of your API method name in the "Additional Rights" segment.  
+
+## User Group Setup  
+Add/Edit user group, and add the application_code for the API application.  
+
+If you are using the older version of user setup, then you may need to switch the step between User Setup and User Group Setup. Then add the user to the User Group Setup.  
+
+## Access Control Setup  
+This step only apply if it is a new User Group, or the group cannot be found in User Setup screen. 
+
+Search and edit base of the User Group code/name. It will be listed without the Access ID/Access Name. 
+
+Click on those setting and assign the value to it. Please refer to Access Control(config/access-control.md) segment for more information. 
+
+## User Setup  
+Create/Edit user from User Setup. Look for the user group, tick on the group.
+
+## API Authentication
+**Application Name:** API Authentication  
+**Module:** System Administration  
+**Table:** t_api_authentication  
+
+**Steps to generate secret key and customer key**  
+**Step 1:** Create new API Authentication  
+**Step 2:** Input the required fields. Refer to API Authentication Screen details below.  
+**Step 3:** Save and will receive the Customer Key and Secret Key required for generate access token  
+
+**API Authentication Screen details.**  
+**API Application -** Application Code.  
+**API Description -** Description of what is your API do.  
+**User -** User ID of your system. Must be exists in system.  
+**Token Duration -** Duration of the generate token count in seconds.  
+**Customer Key -** Will be auto-generated.  
+**Secret Key -** Will be auto-generated.  

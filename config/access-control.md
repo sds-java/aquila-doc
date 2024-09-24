@@ -70,7 +70,12 @@ This step only apply if it is a new User Group, or the group cannot be found in 
 
 Search and edit base of the User Group code/name. It will be listed without the Access ID/Access Name. 
 
-Click on those setting and assign the value to it. Please refer to [Access Control Setup](config/access-control.md) segment for more information. 
+**Access ID -** Access ID is similar to group code. Any group code you want to group together under 1 Accordion Category in User Setup will be setup from here. You can select from lookup for existing Access ID to prevent typo or case sensitive error that will separate the grouping.   
+**Access Name -** Access Name is the name of the Access ID. Naming it with proper understandable name will listed as the accordion name. If you are selecting from existing Access ID, the Access Name will be autofill.    
+**Group Code -** Will be base on the group code you have created. Allow to edit just for in case you have some prefix or postfix logic you need to customize.  
+**Group Name -** Will base on group name you have created. But sometime you may not want to display same name as the group name. Here you can ament the group name to be display diferrented in your Accordion Item.  
+**Access Sequence -** This will be the sequence of the group items in your Accordion group. You can arrange your preferred sequence.   
+**Group Sequence -** Group sequence will determine the current accordion group sequence. Example you have 3 groups, System Administration, Reports, Data Entry. You can set the System Administration as 1, Reports as 2, and Data Entry as 3 to display the group sequence accordingly. When you select from existing groups, the group sequence of your previous setting will be autofilled.   
 
 ## User Setup  
 Create/Edit user from User Setup. Look for the user group, tick on the group.

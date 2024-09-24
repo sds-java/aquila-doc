@@ -201,6 +201,9 @@ Below is requirement for BaseActionSupport_API usage.
 
 Please refer to [Access Setup](config/access-control.md) for more information on Application Setup, User Group Setup, Access Control Setup, User Setup, and API Authentication Setup.
 
+## Application Setup  
+Usual application setup, but with methods of your API method name in the "Additional Rights" segment.  
+
 
 ```java
 

@@ -70,7 +70,7 @@ This step only apply if it is a new User Group, or the group cannot be found in 
 
 Search and edit base of the User Group code/name. It will be listed without the Access ID/Access Name. 
 
-Click on those setting and assign the value to it. Please refer to Access Control(config/access-control.md) segment for more information. 
+Click on those setting and assign the value to it. Please refer to [Access Control Setup](config/access-control.md) segment for more information. 
 
 ## User Setup  
 Create/Edit user from User Setup. Look for the user group, tick on the group.

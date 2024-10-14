@@ -5,8 +5,8 @@ There is 2 step require to configure the Tomcat session to connect REDIS server 
 1. REDIS compiled jar file “rsm-redisson-with-dependencies-3.1.0.jar” in Tomcat/lib and context.xml configuration in Tomcat/conf.  
 
 **Download REDIS JAR**  
-<a href="https://github.com/sds-java/aquila-doc/blob/main/downloads/redis/tomcat7/tomcat7.zip" download>REDIS for Tomcat 7.x</a>  
-<a href="https://github.com/sds-java/aquila-doc/blob/main/downloads/redis/tomcat8/tomcat8.zip" download>REDIS for Tomcat 8.x</a>  
+<a href="https://github.com/sds-java/aquila-doc/raw/refs/heads/main/downloads/redis/tomcat7/tomcat7.zip" download>REDIS for Tomcat 7.x</a>  
+<a href="https://github.com/sds-java/aquila-doc/raw/refs/heads/main/downloads/redis/tomcat8/tomcat8.zip" download>REDIS for Tomcat 8.x</a>  
 
 2. The file “rsm-redisson-with-dependencies-3.1.0.jar” can be found in “tomcat8/libs” SVN. Notes, try to copy to “tomcat8/bin” folder if it cannot detect the “rsm-redisson-with-dependencies-3.1.0.jar” from “tomcat8/libs” folder.
 From “Tomcat/Conf/context.xml” add the following to the “<context>...</context>”  

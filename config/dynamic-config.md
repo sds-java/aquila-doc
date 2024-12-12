@@ -97,6 +97,10 @@ Sample:
 | `_wildCardBack` 		| Convert input criteria to lowercase. Search with back wildcard. | lower(rtrim(ltrim(column))) like 'input%' |
 | `NESTEDSQL`			| Specify custom criteria.					| Append prefix in SQL.										|
 
+| Postfix				| Description 												| 											| 
+| --------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `_defaultValue_` 			| Search field default value. 							| 
+
 #### Query
 
 | Name 					| Value 									| Description 																								| 

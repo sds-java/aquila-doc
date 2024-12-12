@@ -70,6 +70,7 @@ Sample:
 | lookupRetrievingColumnsLabel | &bull; {column_name;label, column_name2;label2} | Specify fields to be shown in the lookup result.												|
 | preSearchMethod		| &bull; {method name}						| Specify method to be called prior to search. Method must be implemented in `DynamicPreSearch.java`.		|
 | prePopulateSearchPage	| &bull; {method name}						| Specify method to be called prior to search. Method must be implemented in `DynamicPrePopulateSearchPage.java`. |
+| sqlOrderBy	| &bull; {order by syntax}						| Order by from sql query. No need to include the keyword order by. |
 
 <!-- TODO : hiddenFields | Hidden inputs to be included in the search form. |  | -->
 <!-- TODO : searchInputStyleFormat_* |  |  | -->
@@ -97,7 +98,7 @@ Sample:
 | `_wildCardBack` 		| Convert input criteria to lowercase. Search with back wildcard. | lower(rtrim(ltrim(column))) like 'input%' |
 | `NESTEDSQL`			| Specify custom criteria.					| Append prefix in SQL.										|
 
-| Postfix				| Description 												| 											| 
+| Postfix				| Description 												| 	
 | --------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
 | `_defaultValue_` 			| Search field default value. 							| 
 

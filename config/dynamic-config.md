@@ -100,7 +100,7 @@ Sample:
 
 | Postfix				| Description 												| 	
 | --------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `_defaultValue_` 			| Search field default value. 							| 
+| `_defaultValue` 			| Search field default value. 							| 
 
 #### Query
 

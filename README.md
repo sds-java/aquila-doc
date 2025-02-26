@@ -12,5 +12,5 @@ SDS Framework is a java web application framework that follows the Model-View-Co
 
 ## Requirements
 - Netbeans
-- Java 8  
+- JDK 8  / JDK 17
 - Apache Tomcat 8.5
